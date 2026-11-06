@@ -1,3 +1,4 @@
+import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 
 export default function SignIn() {
@@ -11,5 +12,6 @@ export default function SignIn() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#061109",
   },
 });

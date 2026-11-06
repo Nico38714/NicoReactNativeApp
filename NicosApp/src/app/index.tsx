@@ -1,20 +1,28 @@
 import { Text, View, StyleSheet } from "react-native";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import React from "react";
 
 export default function Index() {
   return (
     // Started the sign in page on index, idk if we will move this to signIn.tsx or not
-    <View
-      style={[
-        styles.container,
-        {
-          flexDirection: "column",
-        },
-      ]}
-    >
-      <View style={{ flex: 1 }} />
-      <View style={{ flex: 19 }}>
-        <Text style={styles.header}>Sign In</Text>
-      </View>
+    <View style={[styles.container]}>
+      <Text style={styles.header}>Sign In</Text>
+      <TextField
+        id="Username"
+        label="Username"
+        variant="outlined"
+        style={styles.textBox}
+      ></TextField>
+      <TextField
+        id="Password"
+        label="Password"
+        variant="outlined"
+        style={styles.textBox}
+      ></TextField>
+      <Button variant="contained" style={styles.button}>
+        Sign In
+      </Button>
     </View>
   );
 }
@@ -24,9 +32,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#eff2ff",
   },
   header: {
-    fontSize: 42,
+    fontSize: 45,
     fontWeight: "bold",
+    color: "#01068d",
+    paddingBottom: 15,
+  },
+  textBox: {
+    width: 250,
+    paddingBottom: 10,
+  },
+  button: {
+    width: 150,
+    backgroundColor: "#01068d",
+    color: "#ffffff",
   },
 });
