@@ -2,25 +2,17 @@ import { Text, View, StyleSheet } from "react-native";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import React from "react";
+import { useRouter, Link } from "expo-router";
 
 export default function Index() {
+  const router = useRouter();
   return (
-    // Started the sign in page on index, idk if we will move this to signIn.tsx or not
     <View style={[styles.container]}>
-      <Text style={styles.header}>Sign In</Text>
-      <TextField
-        id="Username"
-        label="Username"
-        variant="outlined"
-        style={styles.textBox}
-      ></TextField>
-      <TextField
-        id="Password"
-        label="Password"
-        variant="outlined"
-        style={styles.textBox}
-      ></TextField>
-      <Button variant="contained" style={styles.button}>
+      <Button
+        onClick={() => {
+          router.navigate("/signIn");
+        }}
+      >
         Sign In
       </Button>
     </View>
